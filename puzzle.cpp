@@ -13,6 +13,7 @@ void Node::set_puzzle (int * p)
 
 bool Node::goal_test()
 {
+    
     bool is_goal=true;
     if(this->puzzle[0]!=1)
     {
@@ -46,7 +47,7 @@ bool Node::goal_test()
     {
         is_goal=false;
     }
-    if(this->puzzle[8]!=9)
+    if(this->puzzle[8]!=0)
     {
         is_goal=false;
     }                           
@@ -61,12 +62,12 @@ void Node::copy_puzzle(int * a,int* b )
     }
 }
 
-void swap(int a,int b)
+void swap(int &a,int &b)
 {
     int t{};
     t=b;
-    a=b;
-    b=t;
+    b=a;
+    a=t;
 }
 
 void Node::movetoRight(int* p,int i)

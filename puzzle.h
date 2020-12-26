@@ -2,6 +2,7 @@
 #define PUZZLE_H
 #include <iostream>
 #include <vector>
+
 class Node
 {
 public:
@@ -21,7 +22,7 @@ public:
     void allmoves();
     void show_puzzle();
     bool isthesame_puzzle(int*);
-    friend void swap(int,int);
+    friend void swap(int &,int &);
 
 };
 
