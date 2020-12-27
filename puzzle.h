@@ -7,7 +7,7 @@ class Node
 {
 public:
     Node(int* p);
-    // ~Node();
+    ~Node()=default;
     std::vector<Node*> children;
     Node* Parent;
     int* puzzle{new int[9]};
@@ -25,6 +25,4 @@ public:
     friend void swap(int &,int &);
 
 };
-
-
 #endif

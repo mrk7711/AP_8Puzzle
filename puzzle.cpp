@@ -80,6 +80,7 @@ void Node::movetoRight(int* p,int i)
         Node* child=new Node(c);
         this->children.push_back(child);
         child->Parent=this;
+        
     }
 }
 
@@ -133,6 +134,7 @@ void Node::show_puzzle()
             x++;
         }
         std::cout<<std::endl;
+        
     }
 }
 

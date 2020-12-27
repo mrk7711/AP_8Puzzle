@@ -11,12 +11,11 @@ int main()
     p[4]=5;
     p[5]=6;
     p[6]=7;
-    p[7]=8;
-    p[8]=0;
+    p[7]=0;
+    p[8]=8;
     Node a(p);
-    a.show_puzzle();
     Bfs x;
-    std::vector<Node*> t=x.BUS(&a);
+    std::vector<Node*> t=x.BFS(&a);
     if(t.size()>0)
     {
         for(size_t i{};i<t.size();i++)
