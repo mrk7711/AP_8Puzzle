@@ -58,6 +58,7 @@ void Bfs::show_trace(std::vector<Node*>&trace,Node* c)
     {
         current=current->Parent;
         trace.push_back(current);
+        // current->show_puzzle();
     }    
-
+        // current->show_puzzle();
 }

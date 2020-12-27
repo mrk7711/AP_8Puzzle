@@ -9,7 +9,7 @@ public:
     Node(int* p);
     ~Node()=default;
     std::vector<Node*> children;
-    Node* Parent;
+    Node* Parent{};
     int* puzzle{new int[9]};
     int x{};
     void set_puzzle(int *);

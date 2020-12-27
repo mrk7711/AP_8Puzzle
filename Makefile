@@ -1,6 +1,6 @@
 CXX = g++
-CXXFLAGS = -std=c++20 -Wall -c 
-LXXFLAGS = -std=c++20 
+CXXFLAGS = -std=c++20 -Wall  -O3 -c 
+LXXFLAGS = -std=c++20  -ltbb
 OBJECTS =  main.o   puzzle.o   bfs.o
 TARGET = main
 
