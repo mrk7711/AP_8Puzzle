@@ -1,22 +1,18 @@
 #include "bfs.h"
 
-
-
 std::vector<Node*> Bfs::BFS(Node* root)
 {
     std::vector<Node*> Trace;
     std::vector<Node*> Start;
     std::vector<Node*> Stop;
     Start.push_back(root);
-    // std::cout<<Start.size();
     bool goalFound=false;
     while(Start.size()>0 && goalFound!=true)
     {
         Node* current=Start[0]; 
-        Stop.push_back(current);
+        Stop.push_back(current);  //its our BFS
         Start.erase(Start.begin());
         current->allmoves();
-        // current->show_puzzle();
         for (size_t i{};i<current->children.size();i++)
         {
             Node* child1=(current->children[i]);
@@ -58,7 +54,5 @@ void Bfs::show_trace(std::vector<Node*>&trace,Node* c)
     {
         current=current->Parent;
         trace.push_back(current);
-        // current->show_puzzle();
-    }    
-        // current->show_puzzle();
+    }
 }
