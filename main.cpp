@@ -4,6 +4,7 @@
 #include "dfs.h"
 #include <ctime>
 void show(int *  &);
+int getInv(int *  &);
 int main()
 {
     std::cout<<"Welcome to puzzle!"<<std::endl;
@@ -38,55 +39,67 @@ int main()
                     p[i]=c;
                     show(p);
                 }
-            
-            std::cout<<"Select the Algorithm?\n";
-            std::cout<<"BFS?-->1\n";
-            std::cout<<"DFS?-->2\n";
-            std::cin>>c;
-            switch(c)
-            {
-                case 1:
+                if(getInv(p)%2==0)
                 {
-                    Node a(p);
-                    Bfs y;
-                    std::vector<Node*> u=y.BFS(&a);
-                    if(u.size()>0)
+                    std::cout<<"Puzzle is Solvable\n";
+                    std::cout<<"Select the Algorithm?\n";
+                    std::cout<<"BFS?-->1\n";
+                    std::cout<<"DFS?-->2\n";
+                    std::cin>>c;
+                    switch(c)
                     {
-                        for(size_t i{};i<u.size();i++)
+                    case 1:
+                    {
+                        Node a(p);
+                        Bfs y;
+                        std::vector<Node*> u=y.BFS(&a);
+                        if(u.size()>0)
                         {
-                            u[i]->show_puzzle();
-                            std::cout<<"$$$$$$"<<std::endl;
+                            for(size_t i{};i<u.size();i++)
+                            {
+                                u[i]->show_puzzle();
+                                std::cout<<"$$$$$$"<<std::endl;
+                            }
                         }
+                        else 
+                        {
+                            std::cout<<"No Path!";
+                        }
+                        // std::cout<<u.size();
+                        break;
                     }
-                    else 
+                    case 2:
                     {
-                        std::cout<<"No Path!";
+                        Node a(p);
+                        Dfs x;
+                        std::vector<Node*> t=x.DFS(&a);
+                        if(t.size()>0)
+                        {
+                            for(size_t i{};i<t.size();i++)
+                            {
+                                t[i]->show_puzzle();
+                                std::cout<<"$$$$$$"<<std::endl;
+                            }
+                        }
+                        else 
+                        {
+                            std::cout<<"No Path!";
+                        }
+                        std::cout<<t.size();
+                        break;
                     }
-                    std::cout<<u.size();
-                    break;
+                    default :
+                    {
+                        break;
+                    }
+                    }
                 }
-                case 2:
+                else
                 {
-                    Node a(p);
-                    Dfs x;
-                    std::vector<Node*> t=x.DFS(&a);
-                    if(t.size()>0)
-                    {
-                        for(size_t i{};i<t.size();i++)
-                        {
-                            t[i]->show_puzzle();
-                            std::cout<<"$$$$$$"<<std::endl;
-                        }
-                    }
-                    else 
-                    {
-                        std::cout<<"No Path!";
-                    }
-                    std::cout<<t.size();
-                    break;
+                    std::cout<<"Sorry Puzzle is not solvable!\n";
                 }
-            }
-            break;
+                
+                break;
             }
             case 2:
             {
@@ -107,53 +120,69 @@ int main()
                     i++;
                 }
                 show(p);
-                            std::cout<<"Select the Algorithm?\n";
-            std::cout<<"BFS?-->1\n";
-            std::cout<<"DFS?-->2\n";
-            std::cin>>c;
-            switch(c)
-            {
-                case 1:
+                if(getInv(p)%2==0)
                 {
-                    Node a(p);
-                    Bfs y;
-                    std::vector<Node*> u=y.BFS(&a);
-                    if(u.size()>0)
+                    std::cout<<"Puzzle is Solveble\n";
+                    std::cout<<"Select the Algorithm?\n";
+                    std::cout<<"BFS?-->1\n";
+                    std::cout<<"DFS?-->2\n";
+                    std::cin>>c;
+                    switch(c)
                     {
-                        for(size_t i{};i<u.size();i++)
+                        case 1:
                         {
-                            u[i]->show_puzzle();
-                            std::cout<<"$$$$$$"<<std::endl;
+                            Node a(p);
+                            Bfs y;
+                            std::vector<Node*> u=y.BFS(&a);
+                            if(u.size()>0)
+                            {
+                                for(size_t i{};i<u.size();i++)
+                                {
+                                    u[i]->show_puzzle();
+                                    std::cout<<"$$$$$$"<<std::endl;
+                                }
+                            }
+                            else 
+                            {
+                                std::cout<<"No Path!";
+                            }
+                            std::cout<<u.size();
+                            break;
+                        }
+                        case 2:
+                        {
+                            Node a(p);
+                            Dfs x;
+                            std::vector<Node*> t=x.DFS(&a);
+                            if(t.size()>0)
+                            {
+                                for(size_t i{};i<t.size();i++)
+                                {
+                                    t[i]->show_puzzle();
+                                    std::cout<<"$$$$$$"<<std::endl;
+                                }
+                            }
+                            else 
+                            {
+                                std::cout<<"No Path!";
+                            }
+                            std::cout<<t.size();
+                            break;
+                        }
+                        default:
+                        {
+                            break;
                         }
                     }
-                    else 
-                    {
-                        std::cout<<"No Path!";
-                    }
-                    std::cout<<u.size();
-                    break;
                 }
-                case 2:
+                else
                 {
-                    Node a(p);
-                    Dfs x;
-                    std::vector<Node*> t=x.DFS(&a);
-                    if(t.size()>0)
-                    {
-                        for(size_t i{};i<t.size();i++)
-                        {
-                            t[i]->show_puzzle();
-                            std::cout<<"$$$$$$"<<std::endl;
-                        }
-                    }
-                    else 
-                    {
-                        std::cout<<"No Path!";
-                    }
-                    std::cout<<t.size();
-                    break;
+                    std::cout<<"Sorry Puzzle is not solvable!\n";
                 }
+                    break;
             }
+            default:
+            {
                 break;
             }
         }
@@ -161,6 +190,7 @@ int main()
         std::cin>>y;
         if(y!='y')
         {
+            std::cout<<"Thank you so much!!\n";
             break;
         }
     }
@@ -179,4 +209,18 @@ void show(int * &p)
         }
         std::cout<<std::endl;
     }
+}
+
+int getInv(int *  &p)
+{
+    int cunt=0;
+    for (int i = 0; i <8; i++) 
+    {
+        for (int j = i+1; j < 9; j++)
+        {
+            if (p[j] && p[i] &&  p[i] > p[j]) 
+            cunt++;
+        }
+    }
+    return cunt;
 }

@@ -133,8 +133,9 @@ void Node::show_puzzle()
             std::cout<<this->puzzle[x]<<" ";
             x++;
         }
-        std::cout<<std::endl;
         
+        std::cout<<std::endl;
+
     }
 }
 
