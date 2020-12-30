@@ -3,8 +3,11 @@
 #include "bfs.h"
 #include "dfs.h"
 #include <ctime>
+
 void show(int *  &);
+
 int getInv(int *  &);
+
 int main()
 {
     std::cout<<"Welcome to puzzle!"<<std::endl;
@@ -34,7 +37,7 @@ int main()
                 int c;
                 for(size_t i{};i<9;i++)
                 {
-                    std::cout<<"Please enter the number"<<i<<": \n";
+                    std::cout<<"Please enter the number"<<i+1<<": \n";
                     std::cin>>c;
                     p[i]=c;
                     show(p);
@@ -65,7 +68,7 @@ int main()
                         {
                             std::cout<<"No Path!";
                         }
-                        // std::cout<<u.size();
+                        std::cout<<"Number of States: "<<u.size()<<std::endl;
                         break;
                     }
                     case 2:
@@ -85,7 +88,7 @@ int main()
                         {
                             std::cout<<"No Path!";
                         }
-                        std::cout<<t.size();
+                        std::cout<<"Number of States: "<<t.size()<<std::endl;
                         break;
                     }
                     default :
@@ -146,7 +149,7 @@ int main()
                             {
                                 std::cout<<"No Path!";
                             }
-                            std::cout<<u.size();
+                            std::cout<<"Number of States: "<<u.size()<<std::endl;
                             break;
                         }
                         case 2:
@@ -166,7 +169,7 @@ int main()
                             {
                                 std::cout<<"No Path!";
                             }
-                            std::cout<<t.size();
+                            std::cout<<"Number of States: "<<t.size()<<std::endl;
                             break;
                         }
                         default:
@@ -186,7 +189,7 @@ int main()
                 break;
             }
         }
-        std::cout<<"Do you want to continue?";
+        std::cout<<"Do you want to continue?(y or n)";
         std::cin>>y;
         if(y!='y')
         {
