@@ -5,6 +5,11 @@ Node::Node(int * p)
     set_puzzle(p);
 }
 
+Node::~Node()
+{
+    delete[] puzzle;
+}
+
 void Node::set_puzzle (int * p)
 {
     for (size_t i{};i<9;i++)
@@ -80,7 +85,7 @@ void Node::movetoRight(int* p,int i)
         Node* child=new Node(c);
         this->children.push_back(child);
         child->Parent=this;
-        
+        delete[] c;
     }
 }
 
@@ -94,6 +99,7 @@ void Node::movetoLeft(int* p,int i)
         Node* child=new Node(c);
         this->children.push_back(child);
         child->Parent=this;
+        delete[] c;
     }
 }
 
@@ -107,6 +113,7 @@ void Node::movetoUp(int* p,int i)
         Node* child=new Node(c);
         this->children.push_back(child);
         child->Parent=this;
+        delete[] c;
     }
 }
 
@@ -120,6 +127,7 @@ void Node::movetoDown(int* p,int i)
         Node* child=new Node(c);
         this->children.push_back(child);
         child->Parent=this;
+        delete[] c;
     }
 }
 

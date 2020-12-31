@@ -101,7 +101,7 @@ int main()
                 {
                     std::cout<<"Sorry Puzzle is not solvable!\n";
                 }
-                
+                delete[] p;
                 break;
             }
             case 2:
@@ -182,6 +182,7 @@ int main()
                 {
                     std::cout<<"Sorry Puzzle is not solvable!\n";
                 }
+                    delete[] p;
                     break;
             }
             default:

@@ -7,7 +7,7 @@ class Node
 {
 public:
     Node(int* p);
-    ~Node()=default;
+    ~Node();
     std::vector<Node*> children;
     Node* Parent{};
     int* puzzle{new int[9]};
